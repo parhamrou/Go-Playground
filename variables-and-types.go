@@ -25,4 +25,22 @@ func main() {
 	fmt.Printf("var1 = %d, var2 = %s, var3 = %f\n", var1, var2, var3)
 	var4, var5, var6 := 4, 5, 6
 	fmt.Println(var4, var5, var6)
+
+	// In Go, inlike see we have to do type conversions explicitly. We do this like in python:
+	First := 56.9
+	Second := uint(First)
+	Third := float64(Second) + 0.9
+	fmt.Println(First, Second, Third)
+
+	// When on the right side we have a typed value, the ledt side variable takes that type too.
+	// But when we have a constant numeric value, the variable takes int, float64 or complex128 type.
+	var i = 45
+	x := 45.6
+	z := 78 + 0.9i
+	fmt.Printf("%T, %T, %T\n", i, x, z)
+
+	// We have a 'const' keyword for constant values. The important point is that we can't use ':=' with that. We have to use simple assignement.
+	const Hello = "Hello"
+	const Pi = 3.14
+	fmt.Println(Hello, Pi)
 }
